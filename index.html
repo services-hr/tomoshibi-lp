@@ -69,7 +69,6 @@ img { max-width:100%; height:auto; display:block; }
   display: flex; flex-direction: column;
   gap: 8px; align-items: flex-start;
   width: 100%;
-  margin-bottom: -20px;
 }
 .hero-copy-line {
   background: var(--white);
@@ -84,7 +83,8 @@ img { max-width:100%; height:auto; display:block; }
   max-width: 100%;
 }
 .hero-img-wrap {
-  width: 100%; max-width: 560px; margin: 0 auto;
+  width: 100%; max-width: 560px;
+  margin: -8px auto 0;
   display: flex; justify-content: center;
 }
 .hero-img-wrap img { width: 100%; height: auto; }
@@ -256,7 +256,10 @@ img { max-width:100%; height:auto; display:block; }
   .logo-img { height: 48px; }
   .line-btn { padding: 12px 24px; font-size: 15px; }
   .hero { padding: 32px 32px 0; }
+  .hero-copy-line { font-size: 22px; padding: 12px 20px; }
+  .hero-img-wrap { max-width: 520px; }
   .pain-section { padding: 80px 32px; }
+  .pain-visual { max-width: 640px; margin: 0 auto 36px; }
   .strength-card { padding: 28px; }
   .strength-card-icon { width: 140px; }
   .story-cards { grid-template-columns: 1fr 1fr; }
@@ -272,23 +275,24 @@ img { max-width:100%; height:auto; display:block; }
   .hero-inner {
     position: relative;
     flex-direction: row; align-items: flex-end; justify-content: flex-end;
-    max-width: 1280px;
+    max-width: 1200px;
     min-height: 560px;
-    padding: 40px 120px 40px 80px;
+    padding: 60px 80px 40px;
     gap: 0;
   }
   .hero-copy {
     position: absolute;
     left: 80px;
-    bottom: 110px;
+    bottom: 100px;
     width: auto;
-    max-width: 52%;
+    max-width: none;
     gap: 16px;
     z-index: 2;
   }
   .hero-copy-line {
-    font-size: clamp(26px, 2.8vw, 38px);
-    padding: 18px 28px;
+    font-size: clamp(24px, 2.4vw, 34px);
+    padding: 16px 26px;
+    white-space: nowrap;
   }
   .hero-img-wrap {
     max-width: 460px;
@@ -296,12 +300,28 @@ img { max-width:100%; height:auto; display:block; }
     position: relative;
     z-index: 1;
   }
+  /* 各セクション共通: コンテンツ幅を制限 */
   .pain-section, .value-section, .strength-section, .jobs-section,
-  .success-section, .cta-section, .faq-section { padding: 90px 60px; }
-  .strength-card { padding: 36px; }
-  .strength-card-icon { width: 160px; }
-  .job-cards { flex-direction: row; max-width: 900px; }
-  .job-card { flex: 1; padding: 28px 20px; }
+  .success-section, .cta-section, .faq-section { padding: 90px 40px; }
+  .pain-visual { max-width: 700px; }
+  .value-section > h2,
+  .value-illustration,
+  .check-list { max-width: 700px; margin-left: auto; margin-right: auto; }
+  .value-illustration { max-width: 320px; }
+  .strength-cards { max-width: 900px; }
+  .strength-card { padding: 32px 36px; align-items: center; }
+  .strength-card-icon { width: 180px; }
+  .jobs-section h2,
+  .job-cards { max-width: 1000px; margin-left: auto; margin-right: auto; }
+  .job-cards { flex-direction: row; gap: 20px; }
+  .job-card { flex: 1; padding: 32px 24px; }
+  .success-section .section-title,
+  .story-cards { max-width: 1000px; margin-left: auto; margin-right: auto; }
+  .story-cards { gap: 28px; }
+  .story-card { padding: 28px 28px; }
+  .cta-section { padding: 70px 40px; }
+  .cta-section h2 { max-width: 900px; margin-left: auto; margin-right: auto; margin-bottom: 32px; }
+  .faq-list { max-width: 880px; }
 }
 
 /* Animations */
